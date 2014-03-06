@@ -43,23 +43,23 @@ public class PolygonModel extends Observable implements PolygonIF {
     }
 
     public void createRandomPolygon(final int seed, final int sides, final int guesses){
-	random = new Random(seed);
-	this.seedForDisplay = seed;
-	clear();
-	if(sides < 5){randomNumberOfSides = 5;}
-	else{randomNumberOfSides = sides;}
-	if(guesses < 100){maxGuesses = 100;}
-	else if(guesses > 300){maxGuesses = 300;}
-	else{maxGuesses = guesses;}
-	polygon = new Polygon();
-	generateInitialPoints();
+        random = new Random(seed);
+        this.seedForDisplay = seed;
+        clear();
+        if(sides < 5){randomNumberOfSides = 5;}
+        else{randomNumberOfSides = sides;}
+        if(guesses < 100){maxGuesses = 100;}
+        else if(guesses > 300){maxGuesses = 300;}
+        else{maxGuesses = guesses;}
+        polygon = new Polygon();
+        generateInitialPoints();
         while (polygon.getNumPoints() < randomNumberOfSides) {
             polygon.addPoint(generateRandomPoint(), random.nextInt(polygon
                     .getNumPoints()));}
-	setChanged();
-	notifyObservers();
+        setChanged();
+        notifyObservers();
     }
-    
+
     public void clear(){
         guessedPoints.clear();
         incorrectPoints.clear();
@@ -76,19 +76,19 @@ public class PolygonModel extends Observable implements PolygonIF {
         Point point = new Point(coordX, coordY);
         return point;
     }
-    
+
     public Polygon getPoly() {
         return polygon;
     }
-    
+
     public List<Point> getGuessedPoints() {
         return guessedPoints;
     }
-    
+
     public List<Point> getIncorrect() {
         return incorrectPoints;
     }
-    
+
     public List<Point> getCorrect() {
         return correctPoints;
     }
@@ -106,7 +106,7 @@ public class PolygonModel extends Observable implements PolygonIF {
         setChanged();
         notifyObservers();
     }
-    
+
 
     @Override
     public boolean isInside(final double xCord, final double yCord) {
@@ -126,15 +126,15 @@ public class PolygonModel extends Observable implements PolygonIF {
     public int getMaxGuesses() {
         return maxGuesses;
     }
-    
+
     public double getGuessedArea() {
         return guessedArea;
     }
-    
+
     private int guessesRemaining() {
         return maxGuesses - guessedPoints.size();
     }
-    
+
     public double getScore() {
         return score;
     }

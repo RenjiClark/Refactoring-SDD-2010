@@ -1,5 +1,7 @@
 package umm.softwaredesign.polygon.model;
 
+import java.util.Random;
+
 
 public class Point {
     private final double xCoord;
@@ -16,5 +18,15 @@ public class Point {
     
     public double getY() {
         return this.yCoord;
+    }
+    
+    static Point generateRandomPoint() {
+        Random random = new Random();
+        double coordX;
+        double coordY;
+        coordX = random.nextDouble() * 10;
+        coordY = random.nextDouble() * 10;
+        Point point = new Point(coordX, coordY);
+        return point;
     }
 }

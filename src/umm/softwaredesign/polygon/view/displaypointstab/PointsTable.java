@@ -16,17 +16,17 @@ import umm.softwaredesign.polygon.model.PolygonModel;
 
 @SuppressWarnings("serial")
 public class PointsTable extends JPanel implements Observer {
-    
+
     final private PolygonModel pModel;
     private JEditorPane pointsArea;
     private boolean isLight;
-    
+
     public PointsTable(final PolygonModel polygonModel) {
         super();
         int width = this.getWidth();
         int height = this.getHeight();
-    	BorderLayout layout = new BorderLayout();
-    	this.setLayout(layout);
+        BorderLayout layout = new BorderLayout();
+        this.setLayout(layout);
         this.setName("Points Table");
         pModel = polygonModel;
         pModel.addObserver(this);
@@ -48,7 +48,7 @@ public class PointsTable extends JPanel implements Observer {
         pointsArea.setEditorKit(htmlEditor);
         pointsArea.setFont(new Font("Monospace", Font.PLAIN, 8));
     }
-    
+
     private void returnPoints() {
         StringBuffer points = new StringBuffer(500000);
         points.append(changeColor());
@@ -59,23 +59,23 @@ public class PointsTable extends JPanel implements Observer {
         for (Point p : pModel.getGuessedPoints()) {
             if (pModel.getCorrect().contains(p)) {
                 points.append("<font color=#0098FF size=3 face=Monospace>Point: [").append(decimalFormat.format(p.getX())).append(", ").append(decimalFormat.format(p.getY())).append("]</font><br />");
-                } else {points.append("<font color=#E42217 size=3 face=Monospace>Point: [").append(decimalFormat.format(p.getX())).append(", ").append(decimalFormat.format(p.getY())).append("]</font><br />");}}
+            } else {points.append("<font color=#E42217 size=3 face=Monospace>Point: [").append(decimalFormat.format(p.getX())).append(", ").append(decimalFormat.format(p.getY())).append("]</font><br />");}}
         points.append("</html>");
         pointsArea.setText(points.toString());
-        }
+    }
 
     private Object changeColor() {
-    	String textColor = "<html><font color=#FFFFFF size=3 face=Monospace><b>Polygon Points:</b> <br />";
-    	pointsArea.setBackground(Color.BLACK);
-		if(isLight){
-			textColor = "<html><font color=#000000 size=3 face=Monospace><b>Polygon Points:</b> <br />";
-			pointsArea.setBackground(Color.WHITE);
-		}
-		
-		return textColor;
-	}
+        String textColor = "<html><font color=#FFFFFF size=3 face=Monospace><b>Polygon Points:</b> <br />";
+        pointsArea.setBackground(Color.BLACK);
+        if(isLight){
+            textColor = "<html><font color=#000000 size=3 face=Monospace><b>Polygon Points:</b> <br />";
+            pointsArea.setBackground(Color.WHITE);
+        }
 
-	private double getPercentage() {
+        return textColor;
+    }
+
+    private double getPercentage() {
         return ((double)pModel.getCorrect().size()/(double)pModel.getGuessedPoints().size()*100.0);
     }
 
@@ -84,12 +84,12 @@ public class PointsTable extends JPanel implements Observer {
         returnPoints();
     }
 
-	public void lightColorScheme(final boolean lightOn) {
-		isLight = lightOn;
-		returnPoints();
-		
-	}
-    
+    public void lightColorScheme(final boolean lightOn) {
+        isLight = lightOn;
+        returnPoints();
+
+    }
+
 
 }
 
