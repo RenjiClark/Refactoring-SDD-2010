@@ -5,6 +5,11 @@ public class Point {
     private final double xCoord;
     private final double yCoord;
     
+    public Point(){
+    	xCoord = PolygonModel.getRandom().nextDouble() * 10;
+        yCoord = PolygonModel.getRandom().nextDouble() * 10;   
+    }
+    
     public Point(final double xInput, final double yInput) {
         xCoord = xInput;
         yCoord = yInput;
@@ -16,12 +21,5 @@ public class Point {
     
     public double getY() {
         return this.yCoord;
-    }
-    
-    static Point generateRandomPoint() {
-        double coordX = PolygonModel.getRandom().nextDouble() * 10;
-        double coordY = PolygonModel.getRandom().nextDouble() * 10;
-        Point point = new Point(coordX, coordY);
-        return point;
     }
 }

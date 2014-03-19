@@ -54,7 +54,7 @@ public class PolygonModel extends Observable implements PolygonIF {
         polygon = new Polygon();
         generateInitialPoints();
         while (polygon.getNumPoints() < randomNumberOfSides) {
-            polygon.addPoint(generateRandomPoint(), getRandom().nextInt(polygon
+            polygon.addPoint(new Point(), getRandom().nextInt(polygon
                     .getNumPoints()));}
         setChanged();
         notifyObservers();
@@ -66,15 +66,6 @@ public class PolygonModel extends Observable implements PolygonIF {
         correctPoints.clear();
         guessedArea=0;
         score=0;
-    }
-
-    private Point generateRandomPoint() {
-        double coordX;
-        double coordY;
-        coordX = getRandom().nextDouble() * 10;
-        coordY = getRandom().nextDouble() * 10;
-        Point point = new Point(coordX, coordY);
-        return point;
     }
 
     public Polygon getPoly() {
@@ -95,7 +86,7 @@ public class PolygonModel extends Observable implements PolygonIF {
 
     private void generateInitialPoints() {
         for (int i = 0; i < 2; i++) {
-            Point newP = generateRandomPoint();
+            Point newP = new Point();
             polygon.addInitialPoint(newP);
         }
     }
@@ -118,7 +109,8 @@ public class PolygonModel extends Observable implements PolygonIF {
             } else {
                 incorrectPoints.add(guess);
             }
-        } else { throw new TooManyGuessesException();
+        } else {
+        	throw new TooManyGuessesException();
         }
         return polygon.contains(new Point(xCord, yCord));
     }
