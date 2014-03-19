@@ -90,7 +90,6 @@ public class PointsTable extends JPanel implements Observer {
 
     }
 
-
 }
 
 

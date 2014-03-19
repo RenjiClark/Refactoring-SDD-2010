@@ -7,6 +7,7 @@ import javax.swing.JTabbedPane;
 import umm.softwaredesign.polygon.controllers.ColorSchemeController;
 import umm.softwaredesign.polygon.model.PolygonModel;
 import umm.softwaredesign.polygon.view.displaypointstab.PointsPanel;
+import umm.softwaredesign.polygon.view.displaypointstab.PointsTable;
 import umm.softwaredesign.polygon.view.mainpanelstab.MainPanel;
 import umm.softwaredesign.polygon.view.tabletab.TablePanel;
 
@@ -18,8 +19,9 @@ public class TabsPanel extends JTabbedPane {
     	ColorSchemeController colorControl = new ColorSchemeController();
     	MainPanel main = new MainPanel(polygonModel, colorControl);
     	PointsPanel points = new PointsPanel(polygonModel); //Guessed Points tab
+    	PointsTable tablePoints = new PointsTable(polygonModel); //Guessed Points tab
         JScrollPane tableScrollPane = initializeTablePanel(polygonModel);
-        colorControl.addPanels(main, points);
+        colorControl.addPanels(main, points, tablePoints);
         this.addTab("Main", main);
         this.addTab("Display Points", points); 
         this.addTab("Table", tableScrollPane);

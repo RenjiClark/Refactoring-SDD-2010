@@ -13,14 +13,14 @@ public class Polygon {
         numPoints = 0;
     }
 
-    public boolean checkIntersects(final Point first, final Point second,
+     public boolean checkIntersects(final Point first, final Point second,
             final Point third, final Point fourth) {
         return Line2D.linesIntersect(first.getX(), first.getY(), second.getX(),
                 second.getY(), third.getX(), third.getY(), fourth.getX(),
                 fourth.getY());
     }
 
-    
+
     public void addPoint(final Point addPoint, final int position) {
         Point point1 = points.get(position);
         Point point2 = points.get((position + 1) % numPoints);
@@ -28,8 +28,8 @@ public class Polygon {
                 && counterClockWise(points
                         .get(((position - 1) + numPoints) % numPoints),
                         addPoint, point1)
-                && counterClockWise(addPoint, points.get((position + 2)
-                        % numPoints), point2)) {
+                        && counterClockWise(addPoint, points.get((position + 2)
+                                % numPoints), point2)) {
             points.add(position + 1, addPoint);
             numPoints++;
         }
@@ -69,9 +69,9 @@ public class Polygon {
         }
         return true;
     }
-    
-    
-    
+
+
+
     public boolean isConvex() {
         for (int i = 0; i < numPoints; i++) {
             if (!counterClockWise(points.get((i-1+numPoints) % numPoints), points.get((i+1) % numPoints), points.get(i))) {
@@ -97,5 +97,5 @@ public class Polygon {
     public int getNumPoints() {
         return numPoints;
     }
-    
+
 }

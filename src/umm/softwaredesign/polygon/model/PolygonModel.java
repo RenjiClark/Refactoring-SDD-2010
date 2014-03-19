@@ -11,7 +11,7 @@ import polygonarea.PolygonIF;
 public class PolygonModel extends Observable implements PolygonIF {
 
     private Polygon polygon;
-    private Random random;
+    private static Random random;
     public int seedForDisplay;
     final private List<Point> guessedPoints;
     final private List<Point> correctPoints;
@@ -54,7 +54,7 @@ public class PolygonModel extends Observable implements PolygonIF {
         polygon = new Polygon();
         generateInitialPoints();
         while (polygon.getNumPoints() < randomNumberOfSides) {
-            polygon.addPoint(generateRandomPoint(), random.nextInt(polygon
+            polygon.addPoint(generateRandomPoint(), getRandom().nextInt(polygon
                     .getNumPoints()));}
         setChanged();
         notifyObservers();
@@ -71,8 +71,8 @@ public class PolygonModel extends Observable implements PolygonIF {
     private Point generateRandomPoint() {
         double coordX;
         double coordY;
-        coordX = random.nextDouble() * 10;
-        coordY = random.nextDouble() * 10;
+        coordX = getRandom().nextDouble() * 10;
+        coordY = getRandom().nextDouble() * 10;
         Point point = new Point(coordX, coordY);
         return point;
     }
@@ -137,6 +137,10 @@ public class PolygonModel extends Observable implements PolygonIF {
 
     public double getScore() {
         return score;
+    }
+
+    public static Random getRandom() {
+        return random;
     }
 
 }
