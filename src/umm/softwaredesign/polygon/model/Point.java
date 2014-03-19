@@ -19,10 +19,8 @@ public class Point {
     }
     
     static Point generateRandomPoint() {
-        double coordX;
-        double coordY;
-        coordX = PolygonModel.getRandom().nextDouble() * 10;
-        coordY = PolygonModel.getRandom().nextDouble() * 10;
+        double coordX = PolygonModel.getRandom().nextDouble() * 10;
+        double coordY = PolygonModel.getRandom().nextDouble() * 10;
         Point point = new Point(coordX, coordY);
         return point;
     }
