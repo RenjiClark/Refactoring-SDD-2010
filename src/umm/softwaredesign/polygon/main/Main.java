@@ -4,10 +4,10 @@ package umm.softwaredesign.polygon.main;
 import umm.softwaredesign.polygon.view.PolygonFrame;
 
 public final class Main {
-	
-	private Main(){
-		//Main should never be constructed
-	}
+
+    private Main(){
+        //Main should never be constructed
+    }
 
     /**
      * @param args

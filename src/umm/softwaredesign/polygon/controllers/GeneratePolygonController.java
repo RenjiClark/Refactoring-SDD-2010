@@ -15,19 +15,19 @@ public class GeneratePolygonController implements ActionListener {
     final private JTextField seedNumber;
     final private JTextField sidesField;
     final private JTextField guessesField;
-    
+
     public GeneratePolygonController(final PolygonModel polygonModel, final JTextField seed, final JTextField guesses, final JTextField sides) {
         seedNumber = seed;
         sidesField = sides;
         guessesField = guesses;
         pModel = polygonModel;
     }
-    
+
     @Override
     public void actionPerformed(final ActionEvent event) {
         if (((JButton) event.getSource()).getText().equals("Random Polygon")) {
             pModel.createRandomPolygon();
-            pModel.seedForDisplay = Integer.parseInt(seedNumber.getText());
+            pModel.setSeedForDisplay(Integer.parseInt(seedNumber.getText()));
         } else {
             try{
                 int seed = Integer.parseInt(seedNumber.getText());

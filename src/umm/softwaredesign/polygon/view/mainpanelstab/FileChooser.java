@@ -9,7 +9,7 @@ public class FileChooser {
     private final JFileChooser chooseFile;
     final private int returnVal;
     private String location;
-    
+
     public FileChooser(final JFrame parent) {
         chooseFile = new JFileChooser();
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Class File, Jar File, Java File", "class", "jar", "java");
@@ -17,8 +17,8 @@ public class FileChooser {
         location = "";
         returnVal = chooseFile.showOpenDialog(parent);
     }
-    
-    
+
+
     //@SuppressWarnings("PMD.SystemPrintln")
     public String openDialogBox() {
         if (returnVal == JFileChooser.APPROVE_OPTION) {

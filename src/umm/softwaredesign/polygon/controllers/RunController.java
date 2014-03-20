@@ -19,7 +19,7 @@ public class RunController implements ActionListener {
     private final PolygonModel pModel;
     private String file;
     private final JTextField textField;
-    
+
 
     public RunController(final JTextField fileName,
             final PolygonModel polygonModel) {
@@ -30,16 +30,16 @@ public class RunController implements ActionListener {
 
     @Override
     public void actionPerformed(final ActionEvent event) {
-            pModel.clear();
-            extractPath();
-                runClass();
+        pModel.clear();
+        extractPath();
+        runClass();
     }
 
     private void runClass() throws SecurityException {
         try {
             StudentsClassLoader areaLoader = null;
-                File stuFile = new File(file);
-                areaLoader = CheckAndCompileFile.compileFileAndReturnLoader(pModel, stuFile);
+            File stuFile = new File(file);
+            areaLoader = CheckAndCompileFile.compileFileAndReturnLoader(pModel, stuFile);
             areaLoader = new StudentsClassLoader(file, pModel);
             PolygonAreaIF polygonArea = (PolygonAreaIF) areaLoader.getInstance();
             double area = polygonArea.estimate(pModel.getMaxGuesses());
@@ -70,13 +70,13 @@ public class RunController implements ActionListener {
             dialogueBox(".java file could not compile", "Compiler Exception");
         }
     }
-    
+
     private void dialogueBox(final String message, final String title){
         JOptionPane.showMessageDialog(null, message,title, 
                 JOptionPane.ERROR_MESSAGE, null);
     }
 
     private void extractPath() {
-            file = textField.getText();
+        file = textField.getText();
     }
 }

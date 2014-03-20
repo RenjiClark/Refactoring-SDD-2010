@@ -11,7 +11,7 @@ import umm.softwaredesign.polygon.model.PolygonModel;
 
 
 public class ConvexityTest {
-    
+
     @Test
     public final void randomConvexTest() {
         PolygonModel model = new PolygonModel();
@@ -19,7 +19,7 @@ public class ConvexityTest {
         model.createRandomPolygon();
         assertTrue("Polygon is not convex", polygon.isConvex());
     }
-    
+
     @Test
     public final void convexTest() {
         PolygonModel model = new PolygonModel();
@@ -30,7 +30,7 @@ public class ConvexityTest {
         polygon.addInitialPoint(new Point(2, 7));
         assertTrue("Polygon is not convex", polygon.isConvex());
     }
-    
+
     @Test
     public final void failedConvexTest() {
         PolygonModel model = new PolygonModel();
@@ -41,5 +41,5 @@ public class ConvexityTest {
         polygon.addInitialPoint(new Point(2, 7));
         assertFalse("Polygon is not convex", polygon.isConvex());
     }
-    
+
 }

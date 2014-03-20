@@ -13,13 +13,13 @@ import umm.softwaredesign.polygon.view.tabletab.TablePanel;
 
 @SuppressWarnings("serial")
 public class TabsPanel extends JTabbedPane {
-    
+
     public TabsPanel(final PolygonModel polygonModel) {
-    	super();
-    	ColorSchemeController colorControl = new ColorSchemeController();
-    	MainPanel main = new MainPanel(polygonModel, colorControl);
-    	PointsPanel points = new PointsPanel(polygonModel); //Guessed Points tab
-    	PointsTable tablePoints = new PointsTable(polygonModel); //Guessed Points tab
+        super();
+        ColorSchemeController colorControl = new ColorSchemeController();
+        MainPanel main = new MainPanel(polygonModel, colorControl);
+        PointsPanel points = new PointsPanel(polygonModel); //Guessed Points tab
+        PointsTable tablePoints = new PointsTable(polygonModel); //Guessed Points tab
         JScrollPane tableScrollPane = initializeTablePanel(polygonModel);
         colorControl.addPanels(main, points, tablePoints);
         this.addTab("Main", main);
@@ -32,6 +32,6 @@ public class TabsPanel extends JTabbedPane {
         JScrollPane tableScrollPane = new JScrollPane(table);
         return tableScrollPane;
     }
-    
-    
+
+
 }

@@ -10,7 +10,7 @@ import umm.softwaredesign.polygon.model.PolygonModel;
 @SuppressWarnings("serial")
 public class SidePanel extends JPanel {
 
-    
+
     public SidePanel(final PolygonModel polygonModel, final ConsolePanel consolePanel, final ColorSchemeController colorControl) {
         super();
         this.setName("Side Panel");
@@ -20,5 +20,5 @@ public class SidePanel extends JPanel {
         this.add(generatePanel);
         this.add(scorePanel);       
     }
-    
+
 }

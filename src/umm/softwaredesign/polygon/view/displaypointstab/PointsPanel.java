@@ -19,5 +19,5 @@ public class PointsPanel extends JPanel {
         this.add(pTable);
         this.setName("Points Panel");
     }
-    
+
 }

@@ -12,7 +12,7 @@ import umm.softwaredesign.polygon.model.PolygonAreaLoader;
 import umm.softwaredesign.polygon.model.PolygonModel;
 
 public class AreaLoaderTest {
-    
+
     @Test
     public void testCreateAreaLoader() throws MalformedURLException, ClassNotFoundException, IllegalArgumentException, SecurityException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException{
         PolygonModel testModel = new PolygonModel();

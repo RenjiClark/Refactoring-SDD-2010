@@ -19,7 +19,7 @@ public class ScorePanel extends JPanel implements Observer {
     private JLabel guessedArea;
     private JLabel actualArea;
     final private PolygonModel pModel;
-    
+
     public ScorePanel(final PolygonModel polygonModel) {
         super();
         this.setName("Score Panel");
@@ -42,7 +42,7 @@ public class ScorePanel extends JPanel implements Observer {
         score = new JLabel("SCORE: ");
         score.setName("Score Box");
     }
-    
+
     @Override
     public void update(final Observable observable, final Object arg) {
         guessedArea.setText(String.format("<html>Guessed Area:<P> %.4f </html>",pModel.getGuessedArea()));

@@ -12,7 +12,7 @@ public class PolygonModel extends Observable implements PolygonIF {
 
     private Polygon polygon;
     private static Random random;
-    public int seedForDisplay;
+    private int seedForDisplay;
     final private List<Point> guessedPoints;
     final private List<Point> correctPoints;
     final private List<Point> incorrectPoints;
@@ -36,7 +36,7 @@ public class PolygonModel extends Observable implements PolygonIF {
         clear();
         double math = Math.random();
         int seed =  (int) (math * 999999999);
-        seedForDisplay = seed;
+        setSeedForDisplay(seed);
         int sides = (int) (Math.random()*20);
         int guesses = (int) (Math.random()*200);
         createRandomPolygon(seed, sides, guesses);
@@ -44,7 +44,7 @@ public class PolygonModel extends Observable implements PolygonIF {
 
     public void createRandomPolygon(final int seed, final int sides, final int guesses){
         random = new Random(seed);
-        this.seedForDisplay = seed;
+        this.setSeedForDisplay(seed);
         clear();
         if(sides < 5){randomNumberOfSides = 5;}
         else{randomNumberOfSides = sides;}
@@ -110,7 +110,7 @@ public class PolygonModel extends Observable implements PolygonIF {
                 incorrectPoints.add(guess);
             }
         } else {
-        	throw new TooManyGuessesException();
+            throw new TooManyGuessesException();
         }
         return polygon.contains(new Point(xCord, yCord));
     }
@@ -133,6 +133,14 @@ public class PolygonModel extends Observable implements PolygonIF {
 
     public static Random getRandom() {
         return random;
+    }
+
+    public int getSeedForDisplay() {
+        return seedForDisplay;
+    }
+
+    public void setSeedForDisplay(int seedForDisplay) {
+        this.seedForDisplay = seedForDisplay;
     }
 
 }

@@ -10,10 +10,10 @@ import umm.softwaredesign.polygon.model.PolygonModel;
 @SuppressWarnings("serial")
 public class MainPanel extends JPanel{
 
-	private final GraphPanel gPanel;
-	
+    private final GraphPanel gPanel;
+
     public MainPanel(final PolygonModel polygonModel, final ColorSchemeController colorControl) {
-    	super();
+        super();
         BorderLayout layout = new BorderLayout();
         this.setLayout(layout);
         this.setName("Main Panel");
@@ -28,9 +28,9 @@ public class MainPanel extends JPanel{
         this.add(consolePanel, BorderLayout.SOUTH);
     }
 
-	public void lightColorScheme(final boolean isLight) {
-		gPanel.lightColorScheme(isLight);
-		gPanel.repaint();
-	}
+    public void lightColorScheme(final boolean isLight) {
+        gPanel.lightColorScheme(isLight);
+        gPanel.repaint();
+    }
 
 }

@@ -8,11 +8,11 @@ import javax.swing.JTextArea;
 public class ClearConsoleController implements ActionListener {
 
     final private JTextArea console;
-    
+
     public ClearConsoleController(final JTextArea theConsole) {
         console = theConsole;
     }
-    
+
     @Override
     public void actionPerformed(final ActionEvent event) {
         console.setText("");

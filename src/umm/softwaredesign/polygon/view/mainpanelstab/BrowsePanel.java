@@ -17,10 +17,10 @@ import umm.softwaredesign.polygon.model.PolygonModel;
 
 @SuppressWarnings("serial")
 public class BrowsePanel extends JPanel {
-    
+
     final private JTextField fileTextField;
     final private PolygonModel pModel;
-    
+
     public BrowsePanel(final PolygonModel polygonModel) {
         super();
         this.setName("Top Panel");
@@ -47,6 +47,6 @@ public class BrowsePanel extends JPanel {
         this.add(fileButton, BorderLayout.CENTER);    
         this.add(runButton, BorderLayout.EAST);
     }
-    
-    
+
+
 }

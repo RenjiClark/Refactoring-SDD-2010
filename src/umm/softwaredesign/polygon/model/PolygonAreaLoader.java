@@ -18,18 +18,18 @@ public class PolygonAreaLoader {
         loadClass(filename);
 
     }
-    
+
     private void loadClass(final String filename) throws MalformedURLException, ClassNotFoundException {
-            URL[] fileURLArray = {new URL("file:" + filename)};
-            URLClassLoader urlClassLoader = new URLClassLoader(fileURLArray);
-            polygonArea = urlClassLoader.loadClass("PolygonArea");  
-       
+        URL[] fileURLArray = {new URL("file:" + filename)};
+        URLClassLoader urlClassLoader = new URLClassLoader(fileURLArray);
+        polygonArea = urlClassLoader.loadClass("PolygonArea");  
+
     }
 
     public Object getInstance() throws SecurityException, NoSuchMethodException, IllegalArgumentException, InstantiationException, IllegalAccessException, InvocationTargetException {
-           Constructor<?> constructor = polygonArea.getConstructor(PolygonIF.class);
-       
-          return constructor.newInstance(pModel);
+        Constructor<?> constructor = polygonArea.getConstructor(PolygonIF.class);
+
+        return constructor.newInstance(pModel);
     }
 
 }

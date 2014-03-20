@@ -1,7 +1,5 @@
 package umm.softwaredesign.polygon.view;
 
-
-
 import java.awt.Dimension;
 
 import javax.swing.JFrame;
@@ -9,7 +7,7 @@ import umm.softwaredesign.polygon.model.PolygonModel;
 
 @SuppressWarnings("serial")
 public class PolygonFrame extends JFrame {
-    
+
     public PolygonFrame() {
         super();
         this.setMinimumSize(new Dimension(545, 615));

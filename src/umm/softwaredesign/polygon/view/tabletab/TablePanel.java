@@ -16,7 +16,7 @@ public class TablePanel extends JTable implements Observer {
     private static final long serialVersionUID = -6125316420307428206L;
     private final static String[] COLUMNNAMES = {"Timestamp", "Seed", "Score", "Actual Area", "Guessed Area", "Max Guesses", "Vertices"};
     private final DefaultTableModel tableModel = new DefaultTableModel(COLUMNNAMES, 0);
-  // DefaultTableModel dataModel = new DefaultTableModel(dataVector, columnNames);
+    // DefaultTableModel dataModel = new DefaultTableModel(dataVector, columnNames);
 
     public TablePanel(final PolygonModel polygonModel) {
         super();
@@ -32,7 +32,7 @@ public class TablePanel extends JTable implements Observer {
         }
         Vector<String> rowVector = new Vector<String>();
         rowVector.add(generateTimestamp());
-        rowVector.add(String.valueOf(model.seedForDisplay));
+        rowVector.add(String.valueOf(model.getSeedForDisplay()));
         rowVector.add(String.valueOf(model.getScore()));
         rowVector.add(String.valueOf(model.getPoly().getArea()));
         rowVector.add(String.valueOf(model.getGuessedArea()));

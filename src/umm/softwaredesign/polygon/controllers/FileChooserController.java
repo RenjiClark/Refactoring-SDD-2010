@@ -11,18 +11,18 @@ public class FileChooserController implements ActionListener {
 
     private final JFrame parent;
     private final JTextField textField;
-    
+
     public FileChooserController(final JFrame frame, final JTextField field) {
         parent = frame;
         textField = field;
     }
-    
+
     @Override
     public void actionPerformed(final ActionEvent event) {
         FileChooser fileChooser = new FileChooser(parent);
         String fileLocation = fileChooser.openDialogBox();
         textField.setText(fileLocation);
-        
+
     }
 
 }

@@ -18,9 +18,9 @@ import javax.swing.text.DefaultCaret;
 
 @SuppressWarnings("serial")
 public class ConsolePanel extends JPanel {
-   
-    public JTextArea consoleOutput;
-    public ConsolePanel cPanel;
+
+    private JTextArea consoleOutput;
+    private ConsolePanel cPanel;
 
     public ConsolePanel() {
         super();
@@ -40,24 +40,28 @@ public class ConsolePanel extends JPanel {
 
     private JScrollPane createConsole() {
         consoleOutput = new JTextArea();
-        consoleOutput.setName("Console Output");
-        consoleOutput.setEditable(false);
-        consoleOutput.setAutoscrolls(true);
-        DefaultCaret caret = (DefaultCaret)consoleOutput.getCaret();
+        getConsoleOutput().setName("Console Output");
+        getConsoleOutput().setEditable(false);
+        getConsoleOutput().setAutoscrolls(true);
+        DefaultCaret caret = (DefaultCaret)getConsoleOutput().getCaret();
         caret.setUpdatePolicy(DefaultCaret.ALWAYS_UPDATE);
-        
-        JScrollPane scrollPane = new JScrollPane(consoleOutput);
+
+        JScrollPane scrollPane = new JScrollPane(getConsoleOutput());
         //consoleOutput.setBounds(0, 0, 500, 140);
         scrollPane.setAutoscrolls(true);
         //scrollPane.setPreferredSize(new Dimension(490, 130));
         return scrollPane;
     }
 
+    public JTextArea getConsoleOutput() {
+        return consoleOutput;
+    }
+
     public class TextAreaOutputStream extends OutputStream {
 
         @Override
         public void write(final int character) throws IOException {
-            consoleOutput.append(String.valueOf((char) character));
+            getConsoleOutput().append(String.valueOf((char) character));
         }
     }
 }
