@@ -18,13 +18,8 @@ public class ColorSchemeController implements ItemListener{
 
     @Override
     public void itemStateChanged(final ItemEvent event) {
-        if (event.getStateChange() == ItemEvent.SELECTED) {
-            main.lightColorScheme(true);
-            tablePoints.lightColorScheme(true);
-        } else if (event.getStateChange() == ItemEvent.DESELECTED) {
-            main.lightColorScheme(false);
-            tablePoints.lightColorScheme(false);
-        }
-
+        boolean isSelected = (event.getStateChange() == ItemEvent.SELECTED);
+        main.lightColorScheme(isSelected);
+        tablePoints.lightColorScheme(isSelected);
     }
 }
