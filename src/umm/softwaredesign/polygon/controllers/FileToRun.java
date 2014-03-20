@@ -19,7 +19,6 @@ public class FileToRun {
     }
 
     public double runFileOnTestCase() throws SecurityException, IllegalArgumentException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException {
-
         // this is the line that needs to be threaded to check for hanging
         PolygonAreaIF testCode = (PolygonAreaIF) loader.getInstance();
         final double polygonAreaEstimate = testCode.estimate(pModel.getMaxGuesses());
