@@ -11,7 +11,7 @@ public class ColorSchemeController implements ItemListener{
     private MainPanel main;
     private PointsTable tablePoints;
 
-    public void addPanels(final MainPanel mainPanel, final PointsPanel pointsPanel, final PointsTable pointsTable) {
+    public void addPanels(final MainPanel mainPanel, final PointsTable pointsTable) {
         tablePoints = pointsTable;
         main = mainPanel;
     }

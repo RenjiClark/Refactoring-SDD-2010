@@ -21,7 +21,7 @@ public class TabsPanel extends JTabbedPane {
         PointsPanel points = new PointsPanel(polygonModel); //Guessed Points tab
         PointsTable tablePoints = new PointsTable(polygonModel); //Guessed Points tab
         JScrollPane tableScrollPane = initializeTablePanel(polygonModel);
-        colorControl.addPanels(main, points, tablePoints);
+        colorControl.addPanels(main, tablePoints);
         this.addTab("Main", main);
         this.addTab("Display Points", points); 
         this.addTab("Table", tableScrollPane);
