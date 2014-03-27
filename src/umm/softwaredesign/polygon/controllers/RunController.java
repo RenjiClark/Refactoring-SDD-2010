@@ -55,7 +55,7 @@ public class RunController implements ActionListener {
 			dialogueBox("Your class must be named PolygonArea", "Class Not Found!");
 		} catch (IllegalArgumentException e) {
 			dialogueBox("Make sure your method takes in only an integer!", "Incorrect Arguments");
-		} catch (InstantiationException e) {
+		} catch (InstantiationException e) { //TODO: this needs better dialogue.
 			dialogueBox("Test Instantiation.", "Error!");
 		} catch (IllegalAccessException e) {
 			dialogueBox("Make sure your estimate method is public", "Estimate not accessable");
