@@ -53,15 +53,27 @@ public class PointsTable extends JPanel implements Observer {
         StringBuffer points = new StringBuffer(500000);
         points.append(changeColor());
         java.text.DecimalFormat decimalFormat = new java.text.DecimalFormat("##.#####");
-        for (Point p : pModel.getPoly().getPointList()) {
-            points.append("Point: [").append(decimalFormat.format(p.getX())).append(", ").append(decimalFormat.format(p.getY())).append("]<br />");}
+        appendPointsHTML(points, decimalFormat);
         points.append("<b>Guessed Points:</b><br /><font color=#0098FF><b> ").append(getPercentage()).append("% Correct</b>" + "</font><br />");
         for (Point p : pModel.getGuessedPoints()) {
             if (pModel.getCorrect().contains(p)) {
-                points.append("<font color=#0098FF size=3 face=Monospace>Point: [").append(decimalFormat.format(p.getX())).append(", ").append(decimalFormat.format(p.getY())).append("]</font><br />");
-            } else {points.append("<font color=#E42217 size=3 face=Monospace>Point: [").append(decimalFormat.format(p.getX())).append(", ").append(decimalFormat.format(p.getY())).append("]</font><br />");}}
+                appendHTML(points, decimalFormat, p, "#0098FF");
+            } else {
+                appendHTML(points, decimalFormat, p, "#E42217");
+            }
+        }
         points.append("</html>");
         pointsArea.setText(points.toString());
+    }
+
+    private void appendHTML(StringBuffer points, java.text.DecimalFormat decimalFormat, Point p, String color) {
+        points.append("<font color=" + color + " size=3 face=Monospace>Point: [").append(decimalFormat.format(p.getX())).append(", ").append(decimalFormat.format(p.getY())).append("]</font><br />");
+    }
+
+    private void appendPointsHTML(StringBuffer points, java.text.DecimalFormat decimalFormat) {
+        for (Point p : pModel.getPoly().getPointList()) {
+            points.append("Point: [").append(decimalFormat.format(p.getX())).append(", ").append(decimalFormat.format(p.getY())).append("]<br />");
+        }
     }
 
     private Object changeColor() {

@@ -24,7 +24,7 @@ public class RunController implements ActionListener {
 	public RunController(final JTextField fileName, final PolygonModel polygonModel) {
 		pModel = polygonModel;
 		textField = fileName;
-		file = textField.getText();
+		extractPath();
 	}
 
 	@Override
