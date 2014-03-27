@@ -46,19 +46,11 @@ public class PolygonModel extends Observable implements PolygonIF {
 		random = new Random(seed);
 		this.setSeedForDisplay(seed);
 		clear();
-		if(sides < 5){
-			randomNumberOfSides = 5;
-		} else {
-			randomNumberOfSides = sides;
-		}
-
-		if(guesses < 100){
-			maxGuesses = 100;
-		} else if(guesses > 300){
-			maxGuesses = 300;
-		} else {
-			maxGuesses = guesses;
-		}
+		if(sides < 5){randomNumberOfSides = 5;}
+		else{randomNumberOfSides = sides;}
+		if(guesses < 100){maxGuesses = 100;}
+		else if(guesses > 300){maxGuesses = 300;}
+		else{maxGuesses = guesses;}
 		polygon = new Polygon();
 		generateInitialPoints();
 		while (polygon.getNumPoints() < randomNumberOfSides) {
