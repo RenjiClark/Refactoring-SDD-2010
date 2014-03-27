@@ -6,7 +6,7 @@ import umm.softwaredesign.polygon.view.displaypointstab.PointsPanel;
 import umm.softwaredesign.polygon.view.displaypointstab.PointsTable;
 import umm.softwaredesign.polygon.view.mainpanelstab.MainPanel;
 
-public class ColorSchemeController implements ItemListener{
+public class ColorSchemeController implements ItemListener {
 
     private MainPanel main;
     private PointsTable tablePoints;

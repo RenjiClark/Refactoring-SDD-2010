@@ -21,7 +21,7 @@ public class ClearConsoleController implements ActionListener {
     /**
      * I made this for testing purposes.
      */
-    public String getText(){
+    public String getText() {
         return console.getText();
     }
 }

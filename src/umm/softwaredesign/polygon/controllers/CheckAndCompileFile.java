@@ -14,19 +14,19 @@ import umm.softwaredesign.polygon.model.*;
 public final class CheckAndCompileFile {
 	private final static Logger LOGGER = Logger.getLogger("model.CheckAndCompileFile");
 
-	private CheckAndCompileFile(){
+	private CheckAndCompileFile() {
 		/*
 		 * This is a private constructor because all of the methods in this class are static
 		 */
 	}
-	public static StudentsClassLoader compileFileAndReturnLoader(final PolygonModel model, final File studentFile) throws IOException, ClassNotFoundException{
+	public static StudentsClassLoader compileFileAndReturnLoader(final PolygonModel model, final File studentFile) throws IOException, ClassNotFoundException {
 		final String[] fileNameAndExt = getFileNameAndExt(studentFile);
-		if (fileNameAndExt.length == 1){
+		if (fileNameAndExt.length == 1) {
 			LOGGER.severe("File handed to checkFiletype wasn't .java or class, throwihng IOException");
 			throw new IOException("Given file did not have a .java or .class extension and thus is unsupported.");
 		}
 		File compiledFile;
-		if ("java".equals(fileNameAndExt[1])){
+		if ("java".equals(fileNameAndExt[1])) {
 			compileFile(studentFile);
 			compiledFile = new File(studentFile.getParentFile() + "/" + fileNameAndExt[0] + ".class");
 		} else if ("class".equals(fileNameAndExt[1])) {

@@ -5,7 +5,7 @@ import umm.softwaredesign.polygon.view.PolygonFrame;
 
 public final class Main {
 
-    private Main(){
+    private Main() {
         //Main should never be constructed
     }
 

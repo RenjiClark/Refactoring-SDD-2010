@@ -11,7 +11,7 @@ import umm.softwaredesign.polygon.model.*;
 public class FileToRun {
     final private PolygonModel pModel;
     final private StudentsClassLoader loader;
-    public FileToRun(final File file, final PolygonModel model) throws ClassNotFoundException, IOException{
+    public FileToRun(final File file, final PolygonModel model) throws ClassNotFoundException, IOException {
         File studentFile;
         studentFile = file;
         pModel = model;

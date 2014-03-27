@@ -96,7 +96,7 @@ public class GUITest  extends UISpecTestCase {
     }
 
     @Test(expected = IOException.class)
-    public void testBlankFileFails(){
+    public void testBlankFileFails() {
         mainPanel.getPanel("Top Panel").getTextBox("File Field").setText("/home/bond0107/workspace/PolygonTestHarness/bin/PolygonArea.class");
         mainPanel.getPanel("Top Panel").getButton("Run").click();
     }

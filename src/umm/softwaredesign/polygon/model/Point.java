@@ -5,7 +5,7 @@ public class Point {
     private final double xCoord;
     private final double yCoord;
 
-    public Point(){
+    public Point() {
         xCoord = PolygonModel.getRandom().nextDouble() * 10;
         yCoord = PolygonModel.getRandom().nextDouble() * 10;   
     }

@@ -14,7 +14,7 @@ import umm.softwaredesign.polygon.model.PolygonModel;
 public class AreaLoaderTest {
 
     @Test
-    public void testCreateAreaLoader() throws MalformedURLException, ClassNotFoundException, IllegalArgumentException, SecurityException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException{
+    public void testCreateAreaLoader() throws MalformedURLException, ClassNotFoundException, IllegalArgumentException, SecurityException, InstantiationException, IllegalAccessException, InvocationTargetException, NoSuchMethodException {
         PolygonModel testModel = new PolygonModel();
         String fileName = "resources/PolygonArea.class";
         StudentsClassLoader testLoader = new StudentsClassLoader(fileName, testModel);

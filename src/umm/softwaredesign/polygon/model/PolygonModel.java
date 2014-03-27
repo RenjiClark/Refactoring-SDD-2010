@@ -42,7 +42,7 @@ public class PolygonModel extends Observable implements PolygonIF {
         createRandomPolygon(seed, sides, guesses);
     }
 
-    public void createRandomPolygon(final int seed, final int sides, final int guesses){
+    public void createRandomPolygon(final int seed, final int sides, final int guesses) {
         random = new Random(seed);
         this.setSeedForDisplay(seed);
         clear();
@@ -60,7 +60,7 @@ public class PolygonModel extends Observable implements PolygonIF {
         notifyObservers();
     }
 
-    public void clear(){
+    public void clear() {
         guessedPoints.clear();
         incorrectPoints.clear();
         correctPoints.clear();

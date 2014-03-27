@@ -44,7 +44,7 @@ public class GraphPanel extends JPanel implements Observer {
         drawGeneratedPolygon(graphics); 
         drawGuessed(graphics);
     }
-    public void changeColor(final Graphics graphic){
+    public void changeColor(final Graphics graphic) {
         if (isLight) {
             this.setBackground(Color.white);
             graphic.setColor(Color.black);
@@ -53,7 +53,7 @@ public class GraphPanel extends JPanel implements Observer {
             graphic.setColor(Color.white);
         }
     }
-    private void drawGrid(){
+    private void drawGrid() {
         g2d.setColor(Color.gray);
         for(int i = 1; i < 11; i++){
             g2d.drawLine(0, height*i/10, this.getWidth(), height*i/10);
