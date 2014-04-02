@@ -83,10 +83,6 @@ public class Polygon {
     }
 
     public double getArea() {
-        return Math.abs(signedArea());
-    }
-
-    double signedArea() {
         double sum = 0.0;
         for (int i = 0; i < numPoints; i++) {
             double currentX = points.get(i).getX();
@@ -95,7 +91,7 @@ public class Polygon {
             double nextY = points.get((i + 1) % numPoints).getY();
             sum += (currentX * nextY) - (currentY * nextX);
         }
-        return sum/2;
+        return Math.abs(sum/2);
     }
 
     public int getNumPoints() {
