@@ -67,7 +67,8 @@ public class PointsTable extends JPanel implements Observer {
     }
 
     private void appendHTML(StringBuffer points, java.text.DecimalFormat decimalFormat, Point p, String color) {
-        points.append("<font color=" + color + " size=3 face=Monospace>Point: [").append(decimalFormat.format(p.getX())).append(", ").append(decimalFormat.format(p.getY())).append("]</font><br />");
+        String toAppend = "<font color=" + color + " size=3 face=Monospace>Point: [";
+        points.append(toAppend).append(decimalFormat.format(p.getX())).append(", ").append(decimalFormat.format(p.getY())).append("]</font><br />");
     }
 
     private void appendPointsHTML(StringBuffer points, java.text.DecimalFormat decimalFormat) {
